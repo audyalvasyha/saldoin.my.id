@@ -4,25 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Saldoin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .admin-container { padding: 20px; max-width: 1200px; margin: auto; }
-        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .admin-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .btn-admin { background: var(--primary-color); color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        body { background-color: var(--bg-main); padding: 20px; }
+        .admin-sidebar { width: 250px; position: fixed; left: 20px; top: 20px; bottom: 20px; background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--outline-color); padding: 20px; }
+        .admin-content { margin-left: 290px; }
+        .nav-item { padding: 12px 20px; margin-bottom: 10px; border-radius: 12px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .nav-item:hover, .nav-item.active { background: var(--bg-card); color: var(--primary); }
+        .card { background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--outline-color); padding: 25px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; }
+        input, textarea { width: 100%; background: var(--bg-card); border: 1px solid var(--outline-color); border-radius: 8px; padding: 12px; color: var(--text-main); outline: none; }
+        input:focus { border-color: var(--primary); }
+        .btn-save { background: linear-gradient(135deg, var(--primary), var(--secondary)); border: none; padding: 12px 24px; border-radius: 12px; color: white; font-weight: 800; cursor: pointer; }
+        .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; background: var(--primary-glow); color: var(--primary); }
     </style>
 </head>
 <body>
-    <div class="admin-container">
-        <div class="admin-header">
-            <h1>Admin Dashboard</h1>
-            <button class="btn-admin" onclick="location.href='../'">Keluar</button>
+    <div class="admin-sidebar">
+        <h2 style="margin-bottom: 30px; color: var(--primary);">SALDOIN</h2>
+        <div class="nav-item active"><span class="material-symbols-outlined">dashboard</span> Dashboard</div>
+        <div class="nav-item"><span class="material-symbols-outlined">shopping_cart</span> Produk</div>
+        <div class="nav-item"><span class="material-symbols-outlined">image</span> Banners</div>
+        <div class="nav-item"><span class="material-symbols-outlined">article</span> Artikel</div>
+        <div class="nav-item" style="margin-top: 100px; color: var(--danger);"><span class="material-symbols-outlined">logout</span> Logout</div>
+    </div>
+
+    <div class="admin-content">
+        <header style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1 style="font-size: 1.8rem;">Landing Page Customizer</h1>
+                <p style="color: var(--text-muted);">Ubah konten website secara real-time</p>
+            </div>
+            <div class="status-badge">Live Editor Mode</div>
+        </header>
+
+        <div class="card">
+            <h3 style="margin-bottom: 20px;">Hero Section</h3>
+            <div class="form-group">
+                <label>Judul Utama (H1)</label>
+                <input type="text" id="heroTitle" value="Top Up Game & Pulsa Gak Pake Ribet!">
+            </div>
+            <div class="form-group">
+                <label>Deskripsi Subtitle</label>
+                <textarea id="heroDesc" rows="3">Selamat datang di landing page Saldoin.my.id! Untuk melakukan top up & pembelian voucher digital. Klik tombol di bawah ini dan mulai isi saldo kamu!</textarea>
+            </div>
+            <button class="btn-save" onclick="alert('Konten berhasil disimpan (Simulasi)')">Update Hero Content</button>
         </div>
 
-        <div class="admin-card">
-            <h2>Manajemen Konten</h2>
-            <p>Fitur ini akan segera hadir. Anda akan dapat mengubah data produk, banner, dan artikel langsung dari sini.</p>
+        <div class="card">
+            <h3 style="margin-bottom: 20px;">Product Highlights</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Kelola item yang muncul di bagian Terpopuler</p>
+            <!-- Simulasi Daftar Produk -->
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;" id="adminProductList">
+                <!-- Will be populated by JS -->
+            </div>
         </div>
     </div>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.getJSON('../data.json', (data) => {
+                const $list = $('#adminProductList');
+                data.produk.slice(0, 4).forEach(p => {
+                    $list.append(`
+                        <div style="background: var(--bg-card); border-radius: 12px; padding: 15px; width: 150px; text-align: center; border: 1px solid var(--outline-color);">
+                            <img src="${p.img_product}" style="width: 60px; height: 60px; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--outline-color);">
+                            <div style="font-size: 0.8rem; font-weight: 700; margin-bottom: 10px;">${p.nm_product}</div>
+                            <button style="font-size: 0.7rem; background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 4px 10px; border-radius: 8px; cursor: pointer;">Edit</button>
+                        </div>
+                    `);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
