@@ -4,13 +4,13 @@
     <div class="payment-category-title">QRIS & E-Wallet</div>
     <div class="payment-methods-grid">
         <div class="payment-method-item" data-method="qris">
-            <img src="../assets/IMG_1399.png" alt="QRIS" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=QRIS'">
+            <img src="assets/IMG_1399.png" alt="QRIS" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=QRIS'">
         </div>
         <div class="payment-method-item" data-method="dana">
-            <img src="../assets/IMG_1400.png" alt="DANA" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=DANA'">
+            <img src="assets/IMG_1400.png" alt="DANA" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=DANA'">
         </div>
         <div class="payment-method-item" data-method="linkaja">
-            <img src="../assets/IMG_1401.png" alt="LinkAja" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=LinkAja'">
+            <img src="assets/IMG_1401.png" alt="LinkAja" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=LinkAja'">
         </div>
     </div>
 
@@ -35,21 +35,35 @@
         <div class="payment-method-item" data-method="va-bni">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-payment/bni.svg" alt="VA BNI" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=BNI'">
         </div>
-        <div class="payment-method-item" data-method="va-danamon">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-payment/danamon.svg" alt="VA Danamon" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=Danamon'">
-        </div>
-        <div class="payment-method-item" data-method="va-permata">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-payment/permata.svg" alt="VA Permata" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=Permata'">
-        </div>
-        <div class="payment-method-item" data-method="va-cimb">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-payment/cimb.svg" alt="VA CIMB Niaga" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=CIMB'">
-        </div>
-        <div class="payment-method-item" data-method="va-bsi">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-payment/bsi.svg" alt="VA BSI" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=BSI'">
-        </div>
     </div>
+
     <div id="selected-method-info" class="selected-method-info">
         <p>Pilih metode pembayaran di atas untuk melihat instruksi.</p>
     </div>
-    <!-- Tombol Lanjutkan Pembayaran telah dihapus sesuai permintaan -->
 </div>
+
+<script>
+    $(document).ready(function() {
+        const paymentDetails = {
+            qris: "Scan kode QR menggunakan aplikasi e-wallet Anda (DANA, OVO, GoPay, dll).",
+            dana: "Lakukan pembayaran melalui aplikasi DANA Anda ke nomor Admin.",
+            linkaja: "Lakukan pembayaran melalui aplikasi LinkAja Anda.",
+            alfamart: "Sampaikan ke kasir pembayaran via Buylink/Saldoin.",
+            indomaret: "Sampaikan ke kasir pembayaran via Buylink/Saldoin.",
+            briva: "Gunakan Virtual Account BRI untuk transaksi otomatis.",
+            "va-mandiri": "Gunakan Virtual Account Mandiri untuk transaksi otomatis.",
+            "va-bni": "Gunakan Virtual Account BNI untuk transaksi otomatis."
+        };
+
+        $(".payment-method-item").on("click", function() {
+            $(".payment-method-item").removeClass("active");
+            $(this).addClass("active");
+            const method = $(this).data("method");
+            $("#selected-method-info").html(\`
+                <h3 style='color: var(--accent); margin-bottom: 12px;'>\${method.toUpperCase()}</h3>
+                <p>\${paymentDetails[method]}</p>
+                <div class='btn btn-primary mt-4' style='width: 100%'>Lanjut Pembayaran</div>
+            \`);
+        });
+    });
+</script>
