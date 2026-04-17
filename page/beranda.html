@@ -40,26 +40,26 @@
 <section class="hero">
     <div class="hero-container">
         <h3 class="hero-title">
-            <span class="material-symbols-outlined"> key </span>Best Game
+            <span class="material-symbols-outlined"> sports_esports </span> Premium Top Up
         </h3>
-        <img src="assets/gojo.png" alt="gojo saldoin" class="hero-background" />
+        <img src="assets/gojo.png" alt="Hero Mascot" class="hero-background" />
         <div class="hero-text">
-            <h1>Top Up Game & Pulsa Gak Pake Ribet!</h1>
+            <h1>Level Up Your Gaming Experience!</h1>
             <p class="subtitle">
-                Selamat datang di landing page <strong>Saldoin.my.id</strong>!
-                Untuk melakukan
-                <strong>top up & pembelian voucher digital</strong>. Klik tombol
-                di bawah ini dan mulai isi saldo kamu!
+                Dapatkan Diamond, UC, dan Voucher Game favoritmu dengan harga termurah dan proses instan secepat kilat.
             </p>
-            <a href="https://www.saldoin.my.id" class="cta-btn">Top Up Sekarang</a>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
+                <a href="#/store" class="cta-btn">Mulai Belanja</a>
+                <a href="#/testimoni" class="cta-btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--outline-color);">Testimoni</a>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="container populer">
-    <div class="container-label flex">
-        <div class="label-title">TERPOPULER</div>
-        <div class="view-all-item" id="viewAllPopular">
+<section class="container populer" style="margin-top: 40px;">
+    <div class="container-label flex" style="margin-bottom: 25px;">
+        <div class="label-title" style="font-size: 1.2rem; letter-spacing: 1px; font-weight: 800;">🔥 TERPOPULER</div>
+        <div class="view-all-item" id="viewAllPopular" style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase;">
             Lihat Semua
         </div>
     </div>
@@ -68,11 +68,10 @@
     </ul>
 </section>
 
-<section class="produk-section container">
-    <p class="produk-heading">
-        <strong style="color: #279199">Saldoin.my.id</strong> hadir sebagai
-        <strong>solusi terbaik</strong> untuk semua kebutuhan digital kamu. Kami
-        menyediakan produk terlengkap mulai dari:
+<section class="produk-section container" style="margin-top: 40px; text-align: center;">
+    <h2 style="margin-bottom: 20px; font-weight: 800;">Kenapa Memilih Saldoin?</h2>
+    <p class="produk-heading" style="color: var(--text-muted); max-width: 500px; margin: 0 auto 30px;">
+        Kami adalah platform top-up terpercaya dengan ribuan pelanggan aktif. Nikmati kemudahan transaksi produk digital dalam satu genggaman.
     </p>
     <div class="produk-carousel-wrapper">
         <div class="produk-grid">
@@ -103,10 +102,10 @@
     <ul class="list-artikel" id="list-artikel"></ul>
 </section>
 
-<section class="produk-voucher container">
-    <div class="produk-title"><span class="material-symbols-outlined">
-            confirmation_number
-        </span>Voucher</div>
+<section class="produk-voucher container" style="margin-top: 40px;">
+    <div class="produk-title" style="font-size: 1.2rem; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+        <span class="material-symbols-outlined" style="color: var(--secondary);"> confirmation_number </span> VOUCHER DIGITAL
+    </div>
     <ul class="produk flex" id="productVoucher">
         <!-- Dynamically loaded from data.json -->
     </ul>

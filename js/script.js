@@ -280,6 +280,9 @@ const adaptTextColor = (element, bgColor) => {
     if (r !== undefined) {
         const luminance = getPerceivedLuminance(r, g, b);
         $(element).removeClass('text-light text-dark').addClass(luminance > 0.5 ? 'text-dark' : 'text-light');
+    } else {
+        // Fallback for complex backgrounds or when color cannot be parsed
+        $(element).addClass('text-light');
     }
 };
 
@@ -335,23 +338,25 @@ const initializeCarousel = () => {
     }
 };
 
+const routeMap = {
+    '#/': 'beranda.html',
+    '#/payment': 'payment.html',
+    '#/cara-order': 'cara-order.html',
+    '#/testimoni': 'testimoni.html',
+    '#/about': 'about.html',
+    '#/kontak': 'kontak.html',
+    '#/kebijakan': 'kebijakan.html',
+    '#/faq': 'faq.html',
+    '#/maintenance': 'maintenance.html'
+};
+
 const handleRouting = () => {
     const hash = window.location.hash || '#/';
     const [path, queryString] = hash.split('?');
     const urlParams = new URLSearchParams(queryString || '');
     const params = Object.fromEntries(urlParams.entries());
 
-    let page = 'beranda.html';
-
-    if (path === '#/payment') page = 'payment.html';
-    else if (path === '#/cara-order') page = 'cara-order.html';
-    else if (path === '#/testimoni') page = 'testimoni.html';
-    else if (path === '#/about') page = 'about.html';
-    else if (path === '#/kontak') page = 'kontak.html';
-    else if (path === '#/kebijakan') page = 'kebijakan.html';
-    else if (path === '#/faq') page = 'faq.html';
-    else if (path === '#/maintenance') page = 'maintenance.html';
-    else if (path.startsWith('#/store')) page = 'store.html';
+    let page = routeMap[path] || (path.startsWith('#/store') ? 'store.html' : 'beranda.html');
 
     currentPage = page;
     $('.link-item').removeClass('active');
@@ -380,18 +385,11 @@ $(document).ready(() => {
         $('#closeIcon').toggle(isVisible);
     });
 
+    const pageToHash = Object.fromEntries(Object.entries(routeMap).map(([k, v]) => [v, k]));
+
     $('.link-item').on('click', function() {
         const page = $(this).data('page');
-        let hash = '#/';
-        if (page === 'payment.html') hash = '#/payment';
-        else if (page === 'cara-order.html') hash = '#/cara-order';
-        else if (page === 'testimoni.html') hash = '#/testimoni';
-        else if (page === 'about.html') hash = '#/about';
-        else if (page === 'kontak.html') hash = '#/kontak';
-        else if (page === 'kebijakan.html') hash = '#/kebijakan';
-        else if (page === 'faq.html') hash = '#/faq';
-
-        window.location.hash = hash;
+        window.location.hash = pageToHash[page] || '#/';
     });
 
     window.addEventListener('hashchange', handleRouting);

@@ -8,12 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        body { background-color: var(--bg-main); padding: 20px; }
-        .admin-sidebar { width: 250px; position: fixed; left: 20px; top: 20px; bottom: 20px; background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--outline-color); padding: 20px; }
-        .admin-content { margin-left: 290px; }
-        .nav-item { padding: 12px 20px; margin-bottom: 10px; border-radius: 12px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
-        .nav-item:hover, .nav-item.active { background: var(--bg-card); color: var(--primary); }
-        .card { background: var(--bg-surface); border-radius: 20px; border: 1px solid var(--outline-color); padding: 25px; margin-bottom: 20px; }
+        body {
+            background-color: var(--bg-main);
+            padding: 20px;
+            background-image: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.05), transparent);
+        }
+        .admin-sidebar {
+            width: 280px;
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            bottom: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--outline-color);
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .admin-content { margin-left: 320px; padding-right: 20px; }
+        .nav-item {
+            padding: 14px 20px;
+            margin-bottom: 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .nav-item:hover {
+            color: var(--text-main);
+            background: rgba(255,255,255,0.05);
+        }
+        .nav-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid var(--outline-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; }
         input, textarea { width: 100%; background: var(--bg-card); border: 1px solid var(--outline-color); border-radius: 8px; padding: 12px; color: var(--text-main); outline: none; }
@@ -35,13 +82,32 @@
     <div class="admin-content">
         <header style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1 style="font-size: 1.8rem;">Landing Page Customizer</h1>
-                <p style="color: var(--text-muted);">Ubah konten website secara real-time</p>
+                <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -1px;">Control Panel</h1>
+                <p style="color: var(--text-muted);">Selamat datang kembali, Administrator</p>
             </div>
-            <div class="status-badge">Live Editor Mode</div>
+            <div style="display: flex; gap: 15px;">
+                <div class="card" style="padding: 10px 20px; margin-bottom: 0; display: flex; align-items: center; gap: 10px; border-radius: 15px;">
+                    <span class="material-symbols-outlined" style="color: var(--success);">payments</span>
+                    <div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Total Revenue</div>
+                        <div style="font-weight: 800;">Rp 12.450.000</div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 10px 20px; margin-bottom: 0; display: flex; align-items: center; gap: 10px; border-radius: 15px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary);">group</span>
+                    <div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Active Users</div>
+                        <div style="font-weight: 800;">1,284</div>
+                    </div>
+                </div>
+            </div>
         </header>
 
-        <div class="card">
+        <div class="card" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(167, 139, 250, 0.1)); border: 1px solid var(--primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-weight: 800;">Landing Page Customizer</h3>
+                <div class="status-badge">Real-time Preview</div>
+            </div>
             <h3 style="margin-bottom: 20px;">Hero Section</h3>
             <div class="form-group">
                 <label>Judul Utama (H1)</label>
