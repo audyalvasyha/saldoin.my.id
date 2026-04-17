@@ -1,53 +1,48 @@
+<section class="container-ed">
+    <div class="carousel" id="simpleCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-text">
+                <a href="https://www.instagram.com/saldoin.my.id" target="_blank">@saldoin.my.id</a>
+                <a href="https://saldoin.my.id" target="_blank">www.saldoin.my.id</a>
+                <img src="assets/IMG_1037.png" alt="Logo Saldoin.my.id" height="16px" />
+            </div>
+            <div class="carousel-slide active">
+                <img src="assets/banner5.jpeg" alt="Banner 1" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/768x240/aabbcc/ffffff?text=Banner+1'" />
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/banner6.jpeg" alt="Banner 2" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/768x240/aabbcc/ffffff?text=Banner+2'" />
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/banner7.jpeg" alt="Banner 3" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/768x240/aabbcc/ffffff?text=Banner+3'" />
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/banner8.jpeg" alt="Banner 4" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/768x240/aabbcc/ffffff?text=Banner+4'" />
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/banner9.webp" alt="Banner 5" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/768x240/aabbcc/ffffff?text=Banner+5'" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container menu-topup">
+    <span class="container-label">ISI ULANG & TOP UP JUGA BISA LOH!</span>
+    <div class="prduk-isi">
+        <ul class="list-item" id="productFillList"></ul>
+    </div>
+</section>
+
 <section class="hero">
     <div class="hero-container">
         <h3 class="hero-title">
             <span class="material-symbols-outlined"> key </span>Best Game
         </h3>
         <img src="assets/gojo.png" alt="gojo saldoin" class="hero-background" />
-        <ul class="produk flex" id="populerList">
-            <li class="produk-item flex">
-                <img src="https://play-lh.googleusercontent.com/-HHaGHjAW-xLqEfoHRBVRkAuPYTNgLamKdOcULfHC5GYPr2yX0pcDQMJ0HMJALbLxg=s180-rw"
-                    loading="lazy" alt="Mobile Legends"
-                    onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=P2'" />
-                <p>mulai dari</p>
-                <button class="btn-choose"
-                    onclick="window.location.href='https://www.saldoin.my.id/game/mobile-legends-bang-bang'">
-                    Rp 1.200
-                </button>
-            </li>
-
-            <li class="produk-item flex">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr6oQdotZa8WSg__XOSBUyEbwZsSaE2Q9-zOmvElkHb_7b75VC8WfIsEqEncqgcX1BQW0&amp;usqp=CAU"
-                    loading="lazy" alt="Call of Duty Mobile"
-                    onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=P3'" />
-                <p>mulai dari</p>
-                <button class="btn-choose"
-                    onclick="window.location.href='https://www.saldoin.my.id/game/call-of-duty-mobile-id'">
-                    Rp 9.870
-                </button>
-            </li>
-
-            <li class="produk-item flex">
-                <img src="https://play-lh.googleusercontent.com/sKh_B4ZLfu0jzqx9z98b2APe2rxDb8dIW-QqFHyS3cpzDK2Qq8tAbRAz3rXzOFtdAw=w240-h480-rw"
-                    loading="lazy" alt="Garena Free Fire"
-                    onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=P4'" />
-                <p>mulai dari</p>
-                <button class="btn-choose" onclick="window.location.href='https://www.saldoin.my.id/game/ff'">
-                    Rp 950
-                </button>
-            </li>
-
-            <li class="produk-item flex">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQura4kS6ckveQdv9Erb-FYEDvOGnT1XRzEUw&amp;s"
-                    loading="lazy" alt="PUBG MOBILE"
-                    onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=P5'" />
-                <p>mulai dari</p>
-                <button class="btn-choose"
-                    onclick="window.location.href='https://www.saldoin.my.id/game/pubg-mobile-global'">
-                    Rp 15.429
-                </button>
-            </li>
-        </ul>
         <div class="hero-text">
             <h1>Top Up Game & Pulsa Gak Pake Ribet!</h1>
             <p class="subtitle">
@@ -59,6 +54,18 @@
             <a href="https://www.saldoin.my.id" class="cta-btn">Top Up Sekarang</a>
         </div>
     </div>
+</section>
+
+<section class="container populer">
+    <div class="container-label flex">
+        <div class="label-title">TERPOPULER</div>
+        <div class="view-all-item" id="viewAllPopular">
+            Lihat Semua
+        </div>
+    </div>
+    <ul class="produk flex" id="populerList">
+        <!-- Dynamically loaded from data.json -->
+    </ul>
 </section>
 
 <section class="produk-section container">
@@ -91,451 +98,16 @@
     </div>
 </section>
 
+<section class="artikel-terbaru container">
+    <h3>📌 Artikel Terbaru</h3>
+    <ul class="list-artikel" id="list-artikel"></ul>
+</section>
+
 <section class="produk-voucher container">
     <div class="produk-title"><span class="material-symbols-outlined">
             confirmation_number
         </span>Voucher</div>
     <ul class="produk flex" id="productVoucher">
-
+        <!-- Dynamically loaded from data.json -->
     </ul>
 </section>
-
-<style>
-    :root {
-        --primary-blue: #0c3c60;
-        --secondary-blue: #279199;
-        --light-blue-gradient-start: #dff3ff;
-        --light-blue-gradient-end: #f9fcff;
-        --text-color-dark: #4c6e8a;
-        --button-hover-blue: #086ab9;
-        --box-shadow-color: #279199cb;
-        --border-radius-base: 4px;
-        --spacing-base: 1.5rem;
-        /* 24px */
-    }
-
-    body {
-        font-family: 'Nunito', sans-serif;
-        margin: 0;
-        background-color: #f2f5f9;
-        /* Assuming a general background color from previous context */
-    }
-
-    .container {
-        max-width: 768px;
-        margin: 8px auto;
-        /* Consistent with previous container styling */
-        background-color: #fff;
-        padding: 16px 24px;
-        /* Consistent with previous container styling */
-    }
-
-    /* Hero Section */
-    .hero {
-        background: linear-gradient(to right,
-                var(--light-blue-gradient-start),
-                var(--light-blue-gradient-end));
-        padding: 80px 20px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: var(--border-radius-base) !important;
-        margin: 8px auto;
-        /* Apply container-like margin for consistency */
-        max-width: 768px;
-        /* Apply container-like max-width for consistency */
-    }
-
-    .hero-title {
-        position: absolute;
-        top: -90px;
-        font-size: 0.9rem;
-        padding: 8px 40px 8px 10px;
-        clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
-        background-color: #279199;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .hero-title span,
-    .produk-title span {
-        transform: rotate(135deg);
-        color: #fff;
-        font-size: 1rem;
-    }
-
-    .hero-background {
-        width: 180px;
-        position: absolute;
-        top: -130px;
-        right: -20px;
-        z-index: 0;
-        /* Menerapkan efek blur */
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        /* Tambahkan prefix untuk kompatibilitas */
-
-        /* Membuat gradien transparan sebagai mask */
-        /* Arah: ke atas kanan (dari kiri bawah),
-       Area transparan dari kiri bawah, area blur penuh di kanan atas */
-        mask-image: linear-gradient(to top right,
-                transparent 0%,
-                transparent 50%,
-                black 40%,
-                black 100%);
-        -webkit-mask-image: linear-gradient(to top right,
-                transparent 0%,
-                transparent 30%,
-                black 40%,
-                black 100%);
-
-        /* Pastikan mask menutupi seluruh area */
-        mask-size: cover;
-        -webkit-mask-size: cover;
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        mask-position: bottom left;
-        /* Mulai gradien dari kiri bawah */
-        -webkit-mask-position: bottom left;
-    }
-
-    .hero-text {
-        margin: 24px 0;
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero-container {
-        max-width: 700px;
-        animation: fadeInUp 1s ease-out;
-        position: relative;
-    }
-
-    .hero-container>#populerList {
-        gap: 12px;
-        margin-top: 24px;
-    }
-
-    .hero-container>#populerList>.produk-item {
-        flex: 1 1 calc(15% - 5px);
-        height: 100%;
-        background-color: #27919949;
-        border: 2px solid #279199;
-        padding-bottom: 8px;
-    }
-
-    .hero-container>#populerList>.produk-item>img {
-        position: static;
-        width: 100%;
-        height: 100%;
-        mask-image: linear-gradient(to top, transparent 0%, black 40%);
-        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
-    }
-
-    .hero-container>#populerList>.produk-item>p {
-        position: static;
-        color: #000;
-        font-weight: 500;
-        padding: 8px 0 0 0;
-    }
-
-    .hero-container>#populerList>.produk-item>button {
-        position: static;
-        color: #e67e22;
-        font-weight: 650;
-        font-size: 1rem;
-        border: 0;
-        background-color: transparent;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-        color: var(--primary-blue);
-        margin-bottom: 20px;
-    }
-
-    .subtitle {
-        font-size: 1.1rem;
-        color: var(--text-color-dark);
-        margin-bottom: 30px;
-        line-height: 1.6;
-    }
-
-    .cta-btn {
-        background-color: var(--secondary-blue);
-        color: white;
-        padding: 14px 28px;
-        font-size: 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        font-weight: 600;
-        display: inline-block;
-        /* Ensure it respects padding/margin */
-    }
-
-    .cta-btn:hover {
-        background-color: var(--button-hover-blue);
-    }
-
-    /* Produk Section */
-    .produk-section {
-        margin-top: var(--spacing-base);
-        padding-bottom: var(--spacing-base);
-        /* Add padding to bottom for indicators */
-    }
-
-    .produk-heading {
-        padding: 36px 0;
-        text-align: center;
-        font-size: 1.1rem;
-        /* Added font size for consistency */
-        line-height: 1.5;
-        /* Added line height for readability */
-        color: #082c47;
-        /* Consistent with general text color */
-    }
-
-    .produk-carousel-wrapper {
-        position: relative;
-        padding-bottom: 30px;
-        /* Space for indicators */
-    }
-
-    .produk-grid {
-        display: flex;
-        overflow-x: auto;
-        /* Enable horizontal scrolling */
-        white-space: nowrap;
-        /* Prevent items from wrapping */
-        gap: var(--spacing-base);
-        /* Gap between items */
-        margin: var(--spacing-base) 0;
-        padding-bottom: 10px;
-        /* Add some padding for scroll visibility if scrollbar is hidden */
-        scroll-snap-type: x mandatory;
-        /* Snap to items */
-        -webkit-overflow-scrolling: touch;
-        /* Smooth scrolling on iOS */
-
-        /* Added padding for initial centering */
-        padding-left: calc(50% - (290px / 2));
-        /* Centers the first 290px wide box */
-        padding-right: calc(50% - (290px / 2));
-        /* Ensures last box can also be centered */
-
-        /* Hide scrollbar */
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* IE and Edge */
-    }
-
-    .produk-grid::-webkit-scrollbar {
-        display: none;
-        /* Chrome, Safari, Opera */
-    }
-
-    .produk-box {
-        flex: 0 0 290px;
-        /* Prevent shrinking, maintain fixed width */
-        min-width: 280px;
-        /* Minimum width for smaller screens if needed */
-        height: 180px;
-        /* Fixed height for consistency */
-        box-shadow: var(--box-shadow-color) 1px 1px 2.6px;
-        display: flex;
-        align-items: center;
-        /* Center image vertically */
-        justify-content: center;
-        /* Center image horizontally */
-        border-radius: var(--border-radius-base);
-        overflow: hidden;
-        /* Hide parts of image outside box if any */
-        scroll-snap-align: center;
-        /* Ensures individual items snap to center when scrolling stops */
-    }
-
-    .produk-box img {
-        clip-path: inset(24px round 12px);
-        /* Maintain existing clip-path */
-        max-width: 100%;
-        /* Ensure image fits within its container */
-        height: 100%;
-        /* Ensure image takes full height */
-        object-fit: contain;
-        /* Contain the image within the element's box */
-    }
-
-
-    .produk-voucher {
-        background-color: #dff3ff;
-        border-radius: var(--border-radius-base) !important;
-        position: relative;
-    }
-
-    .produk-title {
-        position: absolute;
-        top: -10px;
-        font-size: 0.9rem;
-        padding: 8px 40px 8px 10px;
-        clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
-        background-color: #279199;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    #productVoucher {
-        row-gap: 0;
-        gap: 8px;
-        /* all: unset; */
-    }
-
-    .produk-voucher .produk .produk-item {
-        all: unset;
-        flex: 1 1 calc(33% - 8px);
-    }
-
-    .produk-voucher .produk .produk-item img {
-        object-fit: cover;
-        width: 100%;
-        height: 120px;
-    }
-
-    .produk-voucher .produk .produk-item>* {
-        position: static;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-        .hero {
-            padding: 80px 15px 48px 15px;
-            border-radius: 0;
-            /* Remove border-radius on smaller screens */
-            margin: 24px auto 16px auto;
-            /* Adjust margin for consistency */
-        }
-
-        .hero-background {
-            top: -120px;
-        }
-
-        .hero-title {
-            position: absolute;
-            top: -90px;
-        }
-
-        .hero h1 {
-            font-size: 1.8rem;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-        }
-
-        .cta-btn {
-            width: 100%;
-            display: block;
-            /* Make button full width */
-            padding: 12px 20px;
-            font-size: 0.95rem;
-        }
-
-        .container {
-            padding: 16px;
-            border-radius: 0;
-        }
-
-        .produk-heading {
-            padding: 24px 0;
-            font-size: 1rem;
-        }
-
-        .produk-grid {
-            /* Adjust padding for mobile screens */
-            padding-left: calc(50% - (250px / 2));
-            /* Centers 250px wide box */
-            padding-right: calc(50% - (250px / 2));
-        }
-
-        .produk-box {
-            flex: 0 0 250px;
-            /* Adjust width for smaller screens */
-            min-width: 200px;
-            /* Ensure minimum width */
-            height: 150px;
-            /* Adjust height for smaller screens */
-        }
-
-        .produk-box img {
-            clip-path: inset(15px round 8px);
-            /* Adjust clip path for smaller screens */
-        }
-
-        .hero-container>#populerList>.produk-item {
-            flex: 1 1 calc(50% - 12px);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .produk-grid {
-            /* Further adjust padding for very small screens if needed */
-            padding-left: calc(50% - (200px / 2));
-            /* Centers min-width 200px box */
-            padding-right: calc(50% - (200px / 2));
-        }
-    }
-</style>
-<script>
-    $(document).ready(() => {
-        $.getJSON('https://saldoin.my.id/data.json')
-            .done((data) => {
-                // Load produk populer
-                const produk = data.voucher
-                
-                // Memastikan ada cukup item di 'produk' sebelum looping
-                const itemsToLoad = Math.min(produk.length, 6) // Ambil maksimal 5 item atau kurang
-                for (let i = 0; i < itemsToLoad; i++) {
-                    // Loop dari 0
-                    const item = produk[i]
-                    $('#productVoucher').append(`
-                            <li class="produk-item flex">
-                                <img src="${item.img
-                        }" loading="lazy" alt="${item.nm_product
-                        }" onerror="this.onerror=null;this.src='https://placehold.co/70x70/aabbcc/ffffff?text=P${i + 1
-                        }'" /></li>
-                        `)
-                }
-            })
-            .fail((jqxhr, textStatus, error) => {
-                const err = textStatus + ', ' + error
-                console.error('Request Gagal: ' + err)
-                showCustomAlert(
-                    'Gagal memuat data produk dan artikel. Silakan coba lagi.'
-                )
-            })
-
-        // // Handler untuk "Lihat Semua" produk populer
-        // $('#viewAllPopular').on('click', () => {
-        //     window.location.href = 'cari?type=topup'
-        // })
-    })
-</script>
