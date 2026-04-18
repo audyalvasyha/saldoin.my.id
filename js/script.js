@@ -12,7 +12,8 @@ $(document).ready(function () {
         "#/about": "page/about.html",
         "#/kontak": "page/kontak.html",
         "#/kebijakan": "page/kebijakan.html",
-        "#/faq": "page/faq.html"
+        "#/faq": "page/faq.html",
+        "#/maintenance": "page/maintenance.html"
     };
 
     function showLoader() {
@@ -189,6 +190,11 @@ $(document).ready(function () {
     $("#btnDaftar").on("click", function() {
         window.location.href = "https://www.saldoin.my.id/daftar";
     });
+
+    // Global helper for maintenance page
+    window.handleContinueTransaction = function() {
+        window.location.hash = "#/beranda";
+    };
 
     $(window).on("hashchange", function () {
         loadPage(location.hash);

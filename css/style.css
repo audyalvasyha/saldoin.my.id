@@ -48,6 +48,14 @@
     box-sizing: border-box;
 }
 
+/* Utility Classes */
+.bg-main { background-color: var(--bg-main); }
+.text-white { color: #ffffff; }
+.font-sans { font-family: 'Outfit', sans-serif; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.justify-center { justify-content: center; }
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -1291,4 +1299,91 @@ blockquote {
 .nav-link, .btn, .tab-btn, .product-card {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+}
+
+/* Maintenance Page Styles */
+.maintenance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+.maintenance-container .logo {
+    margin-bottom: 40px;
+}
+
+.countdown-labels {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.countdown-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    min-width: 80px;
+}
+
+.countdown-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.countdown-label div:last-child {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.message-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.message-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.notify-button {
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-base);
+    margin-bottom: 60px;
+}
+
+.notify-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--primary-glow);
+}
+
+.maintenance-image-placeholder {
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .message-title { font-size: 1.8rem; }
+    .countdown-labels { gap: 10px; }
+    .countdown-label { padding: 10px; min-width: 60px; }
+    .countdown-value { font-size: 1.5rem; }
 }
