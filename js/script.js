@@ -130,7 +130,7 @@ $(document).ready(function () {
         if (products && products.length > 0) {
             products.forEach((item) => {
                 const productCard = `
-                    <li class="product-card reveal" onclick="window.location.href='${item.address || '#'} '">
+                    <li class="product-card reveal" onclick="window.location.href='${item.address || '#'}'">
                         <img src="${item.img_product}" alt="${item.nm_product}" class="product-img" onerror="this.src='https://placehold.co/100x100/161c2d/ffffff?text=Game'">
                         <div class="product-name">${item.nm_product}</div>
                         <div class="product-tag">${item.nm_detail || 'Top Up'}</div>
@@ -139,6 +139,7 @@ $(document).ready(function () {
                 populerList.append(productCard);
             });
         }
+        initRevealObserver();
     }
 
     function renderVouchers(vouchers) {
@@ -156,6 +157,7 @@ $(document).ready(function () {
                 populerList.append(card);
             });
         }
+        initRevealObserver();
     }
 
     $(document).on("input", "#landingSearch", function() {

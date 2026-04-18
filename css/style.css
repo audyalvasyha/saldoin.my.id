@@ -644,6 +644,13 @@ section {
     justify-content: center;
     gap: 12px;
     margin-bottom: 60px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.category-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .tab-btn {
@@ -655,6 +662,7 @@ section {
     cursor: pointer;
     font-weight: 600;
     transition: var(--transition-base);
+    white-space: nowrap;
 }
 
 .tab-btn:hover, .tab-btn.active {
@@ -1255,6 +1263,12 @@ blockquote {
 
 /* Mobile Optimization Tweaks */
 @media (max-width: 768px) {
+    .category-tabs {
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .hero-landing {
         padding: 80px 0 60px;
     }
